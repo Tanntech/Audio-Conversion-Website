@@ -1,0 +1,25 @@
+nav ul li{
+    list-style: none;
+    
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.hello{
+    display: inline-block;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+a:is(:link , :active , :visited).active{
+    color: white;
+    background-color: black;
+}
+

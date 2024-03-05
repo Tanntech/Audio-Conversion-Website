@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI</title>
+  <link rel="stylesheet" href="static\css\index2.css">
+  <script defer src="static\js\index2.js"></script> 
+
+</head>
+<body>
+  <header id="head">
+    <nav class="logo">
+         <!-- DUBBER Logo -->
+    <img src="/static/photos/dubber-low-resolution-color-logo(1).png" alt="DUBBER Logo">
+    </nav>
+ 
+    <!-- Navigation Menu -->
+    <nav id="nav-link">
+      <ul>
+        <li><a href="{{ url_for('Home') }}">Home</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">UseCases</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <!-- Side Navigation Bar -->
+    <aside class="side-nav">
+      <ul>
+        
+        <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Mode</a></li>
+        <li><a href="{{ url_for('SignIn') }}">SignIn</a></li>
+        <!-- Add more side nav items here -->
+      </ul>
+    </aside>
+  
+    <main>
+        <div class="video-header">
+            <video autoplay muted loop id="video-background">
+              <source src="/photos/more images of AI speech dubbing  for website background which will have  acool animation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="overlay">
+              <h1 class="tagline">Transforming Voices, Unleashing Creativity</h1>
+            </div>
+        </div>
+      
+    </main>
+  </div>
+  
+  <footer>
+    <!-- Footer content goes here -->
+  </footer>
+
+
+  <script defer src="static\js\index2.js"></script>
+
+  
+</body>
+</html>
