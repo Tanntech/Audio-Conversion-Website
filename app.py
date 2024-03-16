@@ -5,7 +5,7 @@ from flask import Flask, flash, request,render_template, redirect, url_for
 from werkzeug.utils import secure_filename
 import sys
 import os
-import subprocess 
+import subprocess  
 from pydub import AudioSegment
 
 # changes
@@ -13,11 +13,12 @@ os.sys.stdin.reconfigure(encoding='utf-8')
 os.sys.stdout.reconfigure(encoding='utf-8')
 
 # UPLOAD_FOLDER = r'static/upload'
-UPLOAD_FOLDER = r'/mnt/e/IIT-Project/Audio-Dubbing-Website'
+UPLOAD_FOLDER = r'/mnt/d/IIT-Project/Audio-Conversion-Website'
+
 ALLOWED_EXTENSIONS = {"mp3", '3gp', 'm4a', 'wav' , 'm3u' , 'ogg'}
 
 app = Flask(__name__)
-app.config['SECRET_KEY']= 'supersecretkey'
+app.config['SECRET_KEY']= 'supersecretkey' 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def allowed_file(filename):

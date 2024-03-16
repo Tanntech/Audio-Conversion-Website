@@ -3,6 +3,9 @@ document.getElementById("audioElement").style.display = "none";
 document.getElementById("startRecording").addEventListener("click", initFunction);
 let isRecording = document.getElementById("isRecording");
 
+// Global variable to track recording state
+let isPaused = false;
+
 // function getUserMedia makes use of the MediaDevices and that uses legacy api
 function initFunction() {
   // Display recording
@@ -45,64 +48,38 @@ function initFunction() {
     };
   }
 
-// permission access for using microphone automatically
-  function startusingBrowserMicrophone(boolean) {
+  // permission access for using microphone automatically
+  function startUsingBrowserMicrophone(boolean) {
     getUserMedia({ audio: boolean }).then((stream) => {
       handlerFunction(stream);
     });
   }
-  startusingBrowserMicrophone(true);
+  startUsingBrowserMicrophone(true);
  
   // Pausing handler
-  // document.getElementById("pauseRecording").addEventListener("click", (e) => {
-  //   rec.pause();
-  // });
+  document.getElementById("pauseRecording").addEventListener("click", pauseRec);
 
-  // if(pauseRecording === true){
-  //   isRecording.textContent = "Paused";
-  //   pauseRecording.textContent="Play";;
-  //   }
-  
-  // else{
-  //     rec.resume();
-  //     isRecording.textContent = "Play";
-  //     pauseRecording.textContent="Pause";;
-  
-  //   }
-  //     rec.resume();
-  //     isRecording.textContent = "Play";
-  //     pauseRecording.textContent="Pause";
-
-
-  // Stoping handler
-  document.getElementById("stopRecording").addEventListener("click", (e) => {
-    rec.stop();
-    isRecording.textContent = "Click play button to start listening";
-    document.getElementById("audioElement").style.display = "block";
-    document.getElementById("audioElement").style.margin="auto";
-
-    // document.getElementById("audioElement").style.alignItems = "center"
-
-  });
-  
-  document.getElementById("pauseRecording").addEventListener("click",pauseRec)
-
-  //pausing
-  function pauseRec(){
-    if (rec.start()){
+  function pauseRec() {
+    if (!isPaused) {
       rec.pause();
-      isRecording.textContent = "paused";
-    }
-    else{
+      isPaused = true;
+      isRecording.textContent = "Paused";
+      document.getElementById("pauseRecording").textContent = "Resume";
+    } else {
       rec.resume();
-      isRecording.textContent = "continued";
+      isPaused = false;
+      isRecording.textContent = "Recording...";
+      document.getElementById("pauseRecording").textContent = "Pause";
     }
   }
+
+  // Stoping handler
+  document.getElementById("stopRecording").addEventListener("click", stopRec);
+
+  function stopRec() {
+    rec.stop();
+    isRecording.textContent = "Click start button to record";
+    document.getElementById("audioElement").style.display = "block";
+    document.getElementById("audioElement").style.margin = "auto";
+  }
 }
-
- 
-
-
-
-
-
