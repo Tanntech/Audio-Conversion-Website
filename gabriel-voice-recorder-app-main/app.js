@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // initFunction function is called when this button is pressed.
 document.getElementById("audioElement").style.display = "none";
 document.getElementById("startRecording").addEventListener("click", initFunction);
