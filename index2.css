@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -415,3 +416,422 @@ input[type=submit]:hover{
   text-align: justify; /* Aligning text to the center */
   padding: 20px;
 }
+=======
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#head {
+  background-color: black; /* Red background (replace with desired color) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-color: #fff;
+  border-width: 2px;
+  width: 1520px;
+  position: fixed;
+  z-index: 3;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* header img {
+    height: 65px;
+    width: 229px;
+} */
+
+#head .logo {
+  max-height: 80px;
+  max-width: 240px;
+}
+
+#head .logo img {
+  height: 74px;
+  width: 240px;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-right: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff; /*White text (replace with desired color) */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* ACTIVE LINK  */
+
+/* #nav-link li a:is(:link ,:visited).active{
+  color: black;
+  background-color: white;
+} */
+
+/* #nav-link li a:is(:link , :active , :visited).active{ */
+
+nav ul li a:hover {
+  color: #ff0080;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+main {
+  /* padding: 20px; */
+  background: #333333;
+  width: 100%;
+  height: 100vh;
+  margin-top: 70px;
+  margin-left: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+.side-nav {
+  background-color: black; /* Sidebar background color (replace with desired color) */
+  color: #fff; /* Sidebar text color (replace with desired color) */
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  margin-top: 71px;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.2);
+}
+
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav ul li {
+  margin-bottom: 19px;
+  height: 35px;
+}
+
+.side-nav ul li a {
+  color: #fff; /* Sidebar link color (replace with desired color) */
+  text-decoration: none;
+  float: left;
+  margin-left: 9px;
+  margin-top: 9px;
+}
+.side-nav ul li:hover{
+  box-shadow: rgba(70, 70, 70, 0.742) 0px 5px 15px;
+}
+
+/* Styling for active link (when selected) */
+.side-nav ul li a.active {
+  font-weight: bold;
+}
+
+.box{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.363);
+    border-radius: 20px;
+    background-color: rgba(148, 138, 138, 0.801);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+  }
+
+  .box-card{
+    display: flex;
+    /* overflow: hidden; */
+
+    /* flex-direction: column; */
+  }
+
+  .card {
+    width: 500px;
+    height: 500px;
+    background-color: #100f0f; /* Deep Purple */
+    color: #ffffff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 0, 128, 0.4); /* Electric Pink Box Shadow */
+    transition: box-shadow 0.3s ease;
+  }
+
+.card.b{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.6); /* Electric Pink Box Shadow on hover */
+}
+
+.icon {
+  font-size: 40px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+/*CARD*/
+
+.innercard {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .tab {
+  width: 350px;
+  height: 60px;
+  background-color: #00ffff; 
+  color: #100f0f; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  font-size: x-large;
+} */
+
+.uploadfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-items: baseline;
+}
+
+.uploadfile form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.uploadfile form input {
+  margin-bottom: 50px; /* Adjust spacing between inputs */
+}
+
+input[type=submit]{
+  width: 350px;
+  height: 60px;
+  background-color: #00ffff; /* Cyan */
+  color: #100f0f; /* White text color */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 90px;
+  cursor: pointer;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  font-size: large;
+  font-weight: bold;
+}
+
+.inputfile{
+  width: 350px;
+  /* height: 30px; */
+  /* width: 230px;  */
+  height: 60px;
+  background-color: #00ffff; /* Cyan */
+  color: #100f0f; /* White text color */
+  border-radius: 50px;
+  cursor: pointer;
+  /* margin-left: 0px; */
+  /* margin-bottom: 85px; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  font-size: large;
+  /* font-weight: bold; */
+}
+
+.inputfile::file-selector-button {
+  width: 180px; 
+  height: 45px;
+  border: 1.5px dashed;
+  margin-top: 8px;
+  margin-left: 7px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  font-size: large;
+  font-weight: bold;
+  background-color: #00ffff; /* Cyan */
+  color: #100f0f; /* White text color */
+  /* border-radius: 50px;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-bottom: 85px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  font-size: large;
+  font-weight: bold; */
+}
+
+input[type=submit]:hover{
+  background-color: #333333; /*Charcoal on hover*/
+  color: #00ffff; /* Cyan text color on hover */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); */
+}
+
+.tab span {
+  font-size: large;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background-color: #333333; /* Charcoal on hover */
+  color: #00ffff; /* Cyan text color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.tab .round {
+  border-radius: 50%;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+}
+
+.tab .round img {
+  width: 25px;
+  height: 25px;
+  padding: 7px;
+}
+
+
+
+.icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.text {
+  font-size: 16px;
+}
+
+
+/* MAIN SECTION OF HOME */
+.video-header {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+  width: -webkit-fill-available;
+
+  /* overflow: hidden; */
+}
+
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* z-index: 1; */
+}
+
+.overlay {
+  position: relative;
+  /* z-index: 2; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+}
+
+.tagline {
+  color: #fff;
+  background-color: black;
+  font-size: 3rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pricing-box {
+  width: 250px;
+  background-color: #333333; /* Dark background color */
+  color: #ffffff; /* White text color */
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.6); /* Cyan Box Shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.pricing-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.8); /* Cyan Box Shadow on hover */
+}
+
+.pricing-box h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.pricing-box .price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.pricing-box .features {
+  margin-top: 20px;
+}
+
+.pricing-box .feature {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-box .feature .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.Translate {
+  border:1px solid #ff0080;
+  border-radius: 30px;
+  font-family: 'Courier New', Courier, monospace; /* Using a monospace font for coding feel */
+  font-size: 16px;
+  color: #fff;
+  text-align: justify; /* Aligning text to the center */
+  padding: 20px;
+}
+>>>>>>> origin/main
