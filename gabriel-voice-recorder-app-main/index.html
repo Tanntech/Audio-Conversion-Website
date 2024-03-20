@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale0" />
+      <title>Voice recorder</title>
+      <!-- <script src="app.js"></script> -->
+
+      <style>
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+    }
+    #audioElementContainer {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 60%;
+      margin: 20px auto;
+    }
+    #audioElement {
+      width: 100%;
+    }
+    /* Customize the appearance of the audio controls */
+    #audioElement::-webkit-media-controls-panel {
+      background-color: transparent;
+      border-radius: 10px;
+    }
+    #audioElement::-webkit-media-controls-play-button {
+      color: #007bff;
+    }
+    #audioElement::-webkit-media-controls-timeline,
+    #audioElement::-webkit-media-controls-volume-slider {
+      height: 8px;
+    }
+    #audioElement::-webkit-media-controls-timeline,
+    #audioElement::-webkit-media-controls-volume-slider,
+    #audioElement::-webkit-media-controls-volume-slider-container {
+      background-color: transparent;
+    }
+    #audioElement::-webkit-media-controls-timeline-thumb,
+    #audioElement::-webkit-media-controls-volume-slider-thumb {
+      background-color: #007bff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      margin-top: -4px;
+    }
+      </style>
+    </head>
+    <body>
+
+        
+      <button id="startRecording">Start</button>
+      <button id="pauseRecording">Pause</button>
+      <button id="stopRecording">Stop</button>
+      <br />
+      <p id="isRecording">Click start button to record</p>
+      <!-- <div id="audioElement"></div> -->
+      <audio  id="audioElement" controls></audio>
+
+      <script src="app.js"></script>
+
+    </body>
+
+  </html>
+</html>

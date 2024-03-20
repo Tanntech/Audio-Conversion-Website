@@ -1,0 +1,49 @@
+/* Reset some default styles */
+/* body, h1, p {
+    margin: 0;
+    padding: 0;
+  } */
+  
+  /* Styling for the header */
+  .video-header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  #video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .tagline {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  /* Additional styles for your main content */
+  /* main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+  } */
+  

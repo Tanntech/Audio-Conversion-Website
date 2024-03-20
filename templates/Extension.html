@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI</title>
+    <link rel="stylesheet" href="static\css\index2.css" />
+    <script defer src="static\js\index2.js"></script>
+  </head>
+
+  <body> 
+    <header id="head">
+      <nav class="logo">
+        <!-- DUBBER Logo -->
+        <img src="static\photos\dubber-low-resolution-color-logo.jpeg" alt="DUBBER Logo"/>
+      </nav>
+
+
+      <!-- Navigation Menu -->
+      <nav id="nav-link">
+        <ul>
+          <li><a href="{{ url_for('Home') }}">Home</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">UseCases</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+    <div class="container">
+      <!-- Side Navigation Bar -->
+      <aside class="side-nav">
+        <ul> 
+          <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Mode</a></li>
+          <li><a href="{{ url_for('SignIn') }}">SignIn</a></li>
+          <!-- Add more side nav items here -->
+        </ul>
+      </aside>
+                                     
+                            <!-- MAIN -->
+      <main>
+        <!-- CARD-->
+        <div class="card">
+          <div class="innercard">
+            <div><h2>Speech to Speech translation</h2></div>
+            <br />
+            <div>
+              <img src="/static/photos/voice-search.png" />
+              <img src="/static/photos/arrow-right.png" />
+              <img src="/static/photos/waveform-path.png" />
+            </div>
+            <!-- <div><audio src="" controls  muted loop preload="none">
+
+          </audio>  
+          </div> -->
+          </div>
+          
+
+          <div class="uploadfile">
+            <form method='POST' enctype="multipart/form-data">
+              <div><input type="file" class="inputfile" name="file" /></div>
+              
+              <div><input type="submit" name="submit" value="Upload" /></div>
+
+              <div align="center">Allowed file types are mp3, 3gp, m4a, wav , m3u, ogg</div>
+       
+              
+            </form>
+          </div>
+          
+        </div>
+
+          <!-- 
+          <div class="tab">
+            <?php if (isset($_GET['error'])) {  ?>
+              <p><?=$_GET['error']?></p>
+            <?php } ?> 
+             <form action="upload.php" method="post" enctype="multipart/form-data">
+          
+               <input type="file" name="my_audio">
+               <input type="submit" name="submit" value="Upload">
+
+             </form> -->
+
+          <!-- <a href="http://localhost/audio-upload-php-and-mysql"> -->
+          <!-- <div class="round"><img src="/photos/cloud-upload-alt.png"> </div> -->
+          <!-- <div class="round-text"><span class="text">Upload audio</span></div> -->
+          <!-- </a> -->
+          <!-- </div> -->
+
+          <!-- <div class="tab"> -->
+          <!-- <div class="round"><img src="/photos/cloud-upload-alt.png"> </div> -->
+          <!-- <div class="round-text"><span class="text">Convert</span></div> -->
+         
+          <!-- </div> -->
+          
+
+        <div class="card" >
+          <div class="innercard">
+            <div><h2>Speech to Text translation</h2></div>
+            <br />
+            <div>
+              <img src="/static/photos/voice-search.png" />
+              <img src="/static/photos/arrow-right.png" />
+              <img src="/static/photos/file.png" />
+            </div>
+          </div>
+
+          <div class="uploadfile">
+            <form method='POST' enctype="multipart/form-data">
+              <div><input type="file" class="inputfile" name="file" /></div>
+              <div><input type="submit" name="submit" value="Upload" /></div>
+            </form>
+          </div>
+          
+        </div>
+      </main>
+
+
+    <footer>
+      <!-- Footer content goes here -->
+    </footer>
+
+    <script defer src="static\js\index2.js"></script>
+  </body>
+</html>

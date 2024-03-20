@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static\css\index2.css">
+</head>
+<body>
+  <header id="head">
+    <nav class="logo">
+      <!-- DUBBER Logo -->
+      <img src="static\photos\dubber-low-resolution-color-logo.jpeg" alt="DUBBER Logo"/>
+    </nav>
+
+
+    <!-- Navigation Menu -->
+    <nav id="nav-link">
+      <ul>
+        <li><a href="templates\Home.html">Home</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">UseCases</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <div class="container">
+    <!-- Side Navigation Bar -->
+    <aside class="side-nav">
+      <ul> 
+        <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Mode</a></li>
+        <li><a href="{{ url_for('SignIn') }}">SignIn</a></li>
+        <!-- Add more side nav items here -->
+      </ul>
+    </aside>
+                                   
+                          <!-- MAIN -->
+    <main>
+    <div class="pricing">
+        <div class="pricing-box">
+          <h2>Free</h2>
+          <div class="price">$0/month</div>
+          <div class="features">
+            <div class="feature">
+              <span class="icon">✓</span> Limited features
+            </div>
+          </div>
+        </div>
+        
+        <div class="pricing-box">
+          <h2>Monthly Plan</h2>
+          <div class="price">$19.99/month</div>
+          <div class="features">
+            <div class="feature">
+              <span class="icon">✓</span> Unlimited access
+            </div>
+            <div class="feature">
+              <span class="icon">✓</span> 24/7 Support
+            </div>
+            <!-- Add more features for the monthly plan -->
+          </div>
+        </div>
+        
+        <div class="pricing-box">
+          <h2>Yearly Plan</h2>
+          <div class="price">$199.99/year</div>
+          <div class="features">
+            <div class="feature">
+              <span class="icon">✓</span> Savings of 20%
+            </div>
+            <div class="feature">
+              <span class="icon">✓</span> Priority Support
+            </div>
+            <!-- Add more features for the yearly plan -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <footer>
+      <!-- Footer content goes here -->
+    </footer>
+
+    <script defer src="static\js\index2.js"></script>
+</body>
+</html>

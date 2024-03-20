@@ -1,0 +1,87 @@
+/* Font stack */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #333333; Deep Purple */
+
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #4B0082; /* deep purple */
+    padding: 10px;
+    color: #FFFFFF; /* White text color */
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  
+  .logo img {
+    width: 50px; /* Adjust the size of the logo */
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .menu a {
+    color: #FFFFFF; /* White text color */
+    text-decoration: none;
+    padding: 8px 12px;
+  }
+  
+  .menu a:hover {
+    background-color: #FFFFFF; /* White background on hover */
+    color: #333333; /* Charcoal text color on hover */
+  }
+  
+  /* Main content styling */
+  #main {
+    /* padding: 50px; */
+    /* background-color: #333333; black charcoal */
+    color: #FFFFFF; /* White text color */
+  }
+  
+  /* Optional: Styling for additional sections or elements on the landing page */
+  
+  #block{
+    padding: 50px;
+    margin: 60px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    font-size: xx-large;
+    box-shadow:
+    /* 0px 2.8px 2.2px #df88b4,
+    0 6.7px 5.3px #ff3b9d, */
+     12.5px 10px #ff2592,
+     22.3px 17.9px #f767af;
+    /* 0 31.8px 23.4px #ff2190,
+    0 30px 10px #ff78bb; */
+
+    /* box-shadow: 0px 5px 5px 10px #e7388f; */
+
+       /* background-color: #FF0080;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); */
+
+/* (0, 0, 0, 0.5); */
+
+  }
