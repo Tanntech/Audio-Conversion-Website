@@ -5,7 +5,7 @@ from flask import Flask, flash, request,render_template, redirect, url_for
 from werkzeug.utils import secure_filename
 import sys
 import os
-import subprocess  
+import subprocess   
 from pydub import AudioSegment
 
 # changes
@@ -194,7 +194,6 @@ if __name__ == "__main__":
 
 
 
-=======
 # from datetime import datetime
 # lang_bn_config_st
 # lang_bn_
@@ -391,4 +390,3 @@ if __name__ == "__main__":
 
 
 
->>>>>>> origin/main

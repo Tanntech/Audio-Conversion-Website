@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record and Upload Audio</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const startButton = document.getElementById('startRecording');
+            const stopButton = document.getElementById('stopRecording');
+            const uploadButton = document.getElementById('uploadButton');
+            const audioElement = document.getElementById('audioPreview');
+            let mediaRecorder;
+            let audioChunks = [];
+            let audioFileName;
+
+            startButton.addEventListener('click', startRecording);
+            stopButton.addEventListener('click', stopRecording);
+            uploadButton.addEventListener('click', uploadRecording);
+
+            function startRecording() {
+                if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                    alert('Recording is already in progress. Please stop the current recording first.');
+                    return;
+                }
+                const stream = navigator.mediaDevices.getUserMedia({ audio: true });
+                stream.then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = handleDataAvailable;
+                    mediaRecorder.start();
+                });
+                const baseName = 'recorded_audio';
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '');
+                audioFileName = `${baseName}_${timestamp}.mp3`; // Generate unique file name
+            }
+
+            function handleDataAvailable(event) {
+                audioChunks.push(event.data);
+            }
+
+            function stopRecording() {
+                if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                    mediaRecorder.stop();
+                }
+            }
+
+            function uploadRecording() {
+                if (audioChunks.length === 0) {
+                    alert('No audio recorded!');
+                    return;
+                }
+
+                const blob = new Blob(audioChunks, { type: 'audio/mp3' });
+                const formData = new FormData();
+                formData.append('audio_data', blob, audioFileName);
+
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Audio uploaded successfully!');
+                    } else {
+                        throw new Error('Failed to upload audio.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to upload audio.');
+                });
+
+                audioChunks = []; // Clear the audio chunks after upload
+            }
+
+            mediaRecorder.onstop = function () {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
+                audioElement.src = URL.createObjectURL(audioBlob);
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Record and Upload Audio</h1>
+    <button id="startRecording">Start Recording</button>
+    <button id="stopRecording">Stop Recording</button>
+    <button id="uploadButton">Upload Recording</button>
+    <audio id="audioPreview" controls></audio>
+</body>
+</html>
