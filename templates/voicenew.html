@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Recorder</title>
+  <style>
+    /* CSS styles for audio player customization */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+    }
+    button { 
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+    }
+    #audioElement{
+      background-color: #ffffff70;
+      /* padding: 10px; */
+      border-width: 5px;
+    }
+    #audioElement::-webkit-media-controls-panel {
+      background-color: #ffffff70;
+      padding: 10px;
+      border-width: 5px;
+    }
+    #audioElement::-webkit-media-controls-play-button {
+      background-color: aquamarine;
+      border-radius: 10px;
+    }
+    #audioElement::-webkit-media-controls-current-time-display {
+      color: black;
+    }
+    #audioElement::-webkit-media-controls-time-remaining-display {
+      color: white;
+    }
+    #audioElement::-webkit-media-controls-mute-button {
+      background-color: aquamarine;
+      border-radius: 10px;
+    }
+    #audioElement::-webkit-media-controls-enclosure {
+      border-radius: 10px;
+      border: 1px solid;
+      background-color: black;
+    }
+    .audio-player {
+      background-color: black;
+      box-sizing: border-box;
+      box-shadow: rgba(15, 128, 132, 0.936) 0px 7px 20px;
+      border-radius: 10px;
+      width: 60%;
+      margin: 20px auto;
+    }
+    .box {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <button id="startRecording">Start</button>
+  <button id="pauseRecording">Pause</button>
+  <button id="stopRecording">Stop</button>
+  <!-- <a id="downloading" download>Download</a> -->
+  <br />
+  <p id="isRecording">Click start button to record</p>
+  <audio id="audioElement" controls class="audio-player"></audio>
+
+  <script>
+    document.getElementById("audioElement").style.display = "none";
+    let isRecording = document.getElementById("isRecording");
+    let audioElement = document.getElementById("audioElement");
+
+    let isPaused = false;
+    let audioChunks = [];
+    let mediaRecorder;
+
+    document.getElementById("startRecording").addEventListener("click", initFunction);
+
+    function initFunction() {
+      isRecording.textContent = "Recording...";
+      audioChunks = [];
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function(stream) {
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.start();
+          mediaRecorder.ondataavailable = function(e) {
+            audioChunks.push(e.data);
+          };
+          mediaRecorder.onstop = function() {
+            let audioBlob = new Blob(audioChunks, { type: "audio/mp3" });
+            let audioUrl = URL.createObjectURL(audioBlob);
+            audioElement.src = audioUrl;
+            audioElement.controls = true;
+            audioElement.style.display = "block"; // Show the audio player
+            isRecording.textContent = "Click start button to record";
+            document.getElementById("downloading").href = audioUrl; // Set download link
+          };
+        })
+        .catch(function(err) {
+          console.error('Error accessing microphone:', err);
+        });
+    }
+
+    document.getElementById("pauseRecording").addEventListener("click", pauseRec);
+ 
+    function pauseRec() {
+      if (!isPaused) { 
+        mediaRecorder.pause();
+        isPaused = true;
+        isRecording.textContent = "Paused";
+        document.getElementById("pauseRecording").textContent = "Resume";
+      } else {
+        mediaRecorder.resume();
+        isPaused = false;
+        isRecording.textContent = "Recording...";
+        document.getElementById("pauseRecording").textContent = "Pause";
+      }
+    }
+
+    document.getElementById("stopRecording").addEventListener("click", stopRec);
+
+    function stopRec() {
+      mediaRecorder.stop();
+    }
+
+  
+  </script>
+</body>
+</html>

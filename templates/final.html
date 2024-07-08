@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI</title>
+  <link rel="stylesheet" href="static/css/index.css" />
+  <script defer src="static/js/index2.js"></script>
+</head>
+
+<body>
+
+  <header id="head">
+    <nav class="logo">
+      <!-- DUBBER Logo -->
+      <img src="static/photos/dubber-low-resolution-color-logo.jpeg" alt="DUBBER Logo" />
+    </nav>
+    <!-- Navigation Menu -->
+    <nav id="nav-link">
+      <ul>
+        <li><a href="{{ url_for('Home') }}">Home</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">UseCases</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Side Navigation Bar -->
+    <aside class="side-nav">
+      <ul>
+        <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Mode</a></li>
+        <li><a href="{{ url_for('SignIn') }}">SignIn</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <!-- CARD-->
+      <div class="box">
+        <div><h2>Speech to Text translation</h2></div>
+
+        <div class="box-card">
+          <div class="card">
+            <div class="buttons">
+              <button id="uploadFileBtn">Upload a file</button>
+              <button id="recordAudioBtn">Record Audio</button>
+            </div>
+
+            <div id="dynamicContent">
+              <div id="uploadSection" class="changingdiv a">
+                <div class="innercard">
+                  <div>
+                    <img src="static/photos/music-file.png" alt="image1" />
+                    <img src="static/photos/arrow-right.png" alt="image2" />
+                    <img src="static/photos/transcription.png" />
+                  </div>
+                </div>
+
+                <div class="uploadfile">
+                  <form id="uploadForm" method='POST' enctype="multipart/form-data">
+                    <input type="file" class="inputfile" name="audio_data" />
+                    <select id="language" name="language">
+                      <option value="none" selected disabled hidden>Select Language</option>
+                      <option value="Hindi">Hindi</option>
+                      <option value="Bengali">Bengali</option>
+                      <option value="Nepali">Nepali</option>
+                      <option value="Tamil">Tamil</option>
+                      <option value="Marathi">Marathi</option>
+                      <option value="Gujarati">Gujarati</option>
+                    </select>
+                    <input type="submit" name="submit" value="Generate Translation" />
+                  </form>
+                </div>
+              </div>
+
+              <div id="recordSection" class="changingdiv b" style="display: none;">
+                <form id="audioForm" enctype="multipart/form-data" method="POST">
+                  <div class="innercard">
+                    <div>
+                      <img src="static/photos/voice-search.png" alt="image1" />
+                      <img src="static/photos/arrow-right.png" alt="image2" />
+                      <img src="static/photos/transcription.png" />
+                    </div>
+                  </div>                  <select id="recordLanguage" name="language" required>
+                    <option value="" selected disabled hidden>Select Language</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Nepali">Nepali</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <!-- Add more language options here -->
+                  </select>
+                  <button id="startRecording" type="button">Start Recording</button>
+                  <button id="pauseRecording" type="button">Pause Recording</button>
+                  <button id="stopRecording" type="button">Stop Recording</button>
+                  <button id="uploadButton" type="submit" disabled>Generate Translation</button>
+                  <br />
+                  <p id="isRecording">Click start button to record</p>
+                  <audio id="audioElement" controls class="audio-player"></audio>
+                </form>
+              </div>
+              
+            </div> 
+          </div>
+
+          <div class="card b">
+            <div>
+              <h3>Your Translation will be shown here :</h3>
+            </div>
+            <div id="Translate-before">
+              <p>Choose an audio file from your system(Suitable extensions like mp3,wav) or Directly record your audio(with good microphone quality and in calm place) and click on Generate Translation</p>
+              <div><img src="static/photos/file.png"></div>
+            </div>
+            <!-- <div id="translationResult">gnfgh</div> -->
+            <div id="translated_text"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <!-- Footer content goes here -->
+  </footer>
+
+  <script defer src="static/js/index2.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>

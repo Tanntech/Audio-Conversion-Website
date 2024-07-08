@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Upload and Translation</title>
+</head>
+<body>
+    <h1>Upload Audio and Get Translation</h1>
+    <!-- Form for uploading audio and selecting language -->
+    <form id="uploadForm">
+        <input type="file" id="audioInput" name="audio_data" accept="audio/*" required>
+        <select id="languageSelect" name="language" required>
+            <option value="Gujarati">Gujarati</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bengali">Bengali</option>
+            <option value="Nepali">Nepali</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Marathi">Marathi</option>
+        </select>
+        <button type="submit">Upload</button>
+    </form>
+    <p id="translationOutput"></p>
+
+    <!-- JavaScript to handle form submission and display translation -->
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('/upload_audio', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('translationOutput').textContent = data.translated_text;
+            })
+            .catch(error => {
+                document.getElementById('translationOutput').textContent = 'Error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
